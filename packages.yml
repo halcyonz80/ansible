@@ -1,15 +1,18 @@
 ---
-- name: Remove unwanted packages
-  ansible.builtin.dnf:
-    name:
-      - iw*firmware
-      - cockpit*
-    state: absent
+name: Package management playbook, use to add or remove packages
+hosts: all
+tasks:
+  - name: Remove unwanted packages
+    ansible.builtin.dnf:
+      name:
+        - iw*firmware
+        - cockpit*
+      state: absent
 
-- name: Install essentail packages
-  ansible.builtin.dnf:
-    name:
-      - vim
-      - mtr
-      - git
-    state: latest
+  - name: Install essentail packages
+    ansible.builtin.dnf:
+      name:
+        - vim
+        - mtr
+        - git
+      state: latest
