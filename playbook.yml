@@ -1,7 +1,7 @@
 #playbook.yaml
 ---
-- name: Get hostname and IP address of Alpine hosts
-  hosts: web_servers
+- name: Get hostname and IP address of new hosts
+  hosts: all
   gather_facts: yes
   tasks:
     - name: Display hostname and IP address
