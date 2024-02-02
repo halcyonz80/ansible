@@ -4,6 +4,7 @@
     name:
       - iw*firmware
       - cockpit*
+    state: absent
 
 - name: Install essentail packages
   ansible.builtin.dnf:
@@ -11,4 +12,4 @@
       - vim
       - mtr
       - git
-  state: latest
+    state: latest
