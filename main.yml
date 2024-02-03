@@ -1,0 +1,16 @@
+---
+- name: Master Playbook
+  hosts: all
+  roles:
+    - role: packages
+    - role: harden_os 
+    - role: users
+    - role: cnic_software
+    - role: cnic_configure
+    - role: harden_all
+    - role: tests
+      vars:
+        vm_list:
+  tasks:
+    - name: include some post config steps
+      include_tasks: post-configproxmox.yml
