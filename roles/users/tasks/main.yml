@@ -15,7 +15,7 @@
 
 - name: Set up ssh keys
   ansible.posix.authorized_key:
-    user: " { item.username }}" 
+    user: "{{ item.username }}" 
     key: "{{ key }}"
     state: present
     exclusive: true
