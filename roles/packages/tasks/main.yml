@@ -8,10 +8,40 @@
       - cockpit*
     state: absent
 
-- name: Install essentail packages
+- name: Install essential packages
   ansible.builtin.dnf:
     name:
       - vim
       - mtr
       - git
+      - curl
+      - wget
+      - rsync
+      - smartmontools
+      - unzip
+      - tcpdump
+      - iptraf
+      - mtr
+      - hdparm
+      - vim-enchanced
+      - screen
+      - traceroute
+      - nmap
+      - htop
+      - iftop
+      - iotop
+      - multitail
+      - git 
+      - logrotate
+      - tree 
+      - jq
+      - bind-utils
+      - net-tools
+      - lsof
+      - fail2ban
+      - aide
+      - gpgme
+      - dnf-automatic
+      - chrony
+      - vnstat
     state: latest
