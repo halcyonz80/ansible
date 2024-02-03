@@ -1,2 +1,8 @@
 ---
 # tasks file for cnic_software
+
+- name: Install Main CNIC packages
+  ansible.builtin.package:
+    name: "{{ item.name }}" 
+    state: present
+  with_items: "{{ packages }}"

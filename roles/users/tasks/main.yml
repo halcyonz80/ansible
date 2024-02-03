@@ -1,7 +1,7 @@
 ---
 # tasks file for users
 
-- name: Create users
+- name: Add and remove users based on the vars file
   user:
     name: "{{ item.username }}"
     password: "{{ item.password_hash }}"  # You should replace this with the hashed password for each user
@@ -13,12 +13,7 @@
     state: "{{ item.state | default('present') }}"
   with_items: "{{ users }}"
 
-- name: show vars
-  ansible.builtin.debug:
-    msg: var is  "{{ item.username }}"
-  with_items: "{{ users }}"
-  ignore_errors: true
-
+### Add SSH keys but if a user is set to be deleted then skip the step
 - name: Set up ssh keys
   ansible.posix.authorized_key:
     user: "{{ user_info.username }}" 
