@@ -43,5 +43,5 @@
       - dnf-automatic
       - chrony
       - vnstat
-    state: latest
+  state: latest
   ignore_failures: true
