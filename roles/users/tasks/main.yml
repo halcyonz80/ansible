@@ -13,6 +13,12 @@
     state: present
   with_items: "{{ users }}"
 
+- name: show vars
+  ansible.builtin.debug:
+    msg: var is  "{{ item.username }}"
+  with_items: "{{ users }}"
+  ignore_errors: true
+
 - name: Set up ssh keys
   ansible.posix.authorized_key:
     user: "{{ item.username | dict2items }}" 
