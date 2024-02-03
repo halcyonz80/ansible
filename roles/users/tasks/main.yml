@@ -26,7 +26,11 @@
     state: present
     exclusive: true
   with_items: "{{ users }}"
+  loop_control:
+    loop_var: user_info
   ignore_errors: true
+  when: user_info.state | default('present') != 'absent'
+
 
 - name: allow members of the wheel group to sudo certain commands without entering a password
   ansible.builtin.lineinfile:
