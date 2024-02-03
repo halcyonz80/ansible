@@ -12,7 +12,6 @@ users:
     createhome: true
     home: /home/kareem
     groups:
-      - sudo
       - wheel
 
   - username: lars
@@ -24,7 +23,6 @@ users:
     createhome: true
     home: /home/lars
     groups:
-      - sudo
       - wheel
 
   - username: jhewlett
@@ -35,5 +33,4 @@ users:
     createhome: true
     home: /home/jhewlett
     groups:
-      - sudo
       - wheel
