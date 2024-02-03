@@ -11,6 +11,7 @@ users:
     system: false
     createhome: true
     home: /home/kareem
+    state: absent
     groups:
       - wheel
     ssh_keys:
