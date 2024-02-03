@@ -5,7 +5,7 @@
 # grub-crypt
 users:
   - username: kareem
-    password_hash: sdfwdf
+    password_hash: $6$KQfBj3XEWaf24YHS$MIfRuf8LlEi9sa4V1Kif5EXIOMe28OjZXNJp4p6JGa.RMaWJTunJnbK3AzRDIgPXWw/RxJCIu9yofTfg0CocR0
     use_sudo: true
     shell: /bin/bash
     system: false
@@ -17,6 +17,7 @@ users:
 
   - username: lars
     password_hash: sdfwdf
+    password_hash: $6$KQfBg3XEWkf24YHS$MIfRuf8LlEi9sa4V1Kif5EXIOMe28OjZXNJp4p6JGa.RMaWJTunJnbK3AzRDIgPXWw/RxJCIu9yofTfg0CocR0
     use_sudo: true
     shell: /bin/bash
     system: false
@@ -27,7 +28,7 @@ users:
       - wheel
 
   - username: jhewlett
-    password_hash: sdfwdf
+    password_hash: $6$KQfBg3XEWaf24YHS$MIfRuf8LlEi9sa4V1Kif5EXIOMe28OjZXNJp4p6JGa.RMaWJTunJnbK3AzRDIgPXWw/RxJCIu9yofTfg0CocR0
     use_sudo: true
     shell: /bin/bash
     system: false
