@@ -29,6 +29,7 @@
     dest: /etc/sudoers.d/99-cnic-commands-no-pass
     state: present
     line: "{{ item }}"
+    create: true
   with_items: "{{ cmds }}"
   loop: 
     - "%wheel ALL=(ALL) NOPASSWD: iftop"
