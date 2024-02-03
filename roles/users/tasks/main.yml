@@ -28,5 +28,9 @@
   ansible.builtin.lineinfile:
     dest: /etc/sudoers.d/99-cnic-commands-no-pass
     state: present
-    line: "{{ item.cmd }}"
+    line: "{{ item }}"
    with_items: "{{ cmds }}"
+   loop: 
+     - "%wheel ALL=(ALL) NOPASSWD: iftop"
+     - "%wheel ALL=(ALL) NOPASSWD: htop"
+

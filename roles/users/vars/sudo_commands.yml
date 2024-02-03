@@ -1,4 +1,0 @@
----
-cmds:
-  - "%wheel ALL=(ALL) NOPASSWD: iftop"
-  - "%wheel ALL=(ALL) NOPASSWD: tcpdump"
