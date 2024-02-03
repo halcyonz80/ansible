@@ -24,5 +24,5 @@
     exclusive: true
   with_items: "{{ users }}"
   vars:  
-    key: "{{ user_info.ssh_keys }}"
+    key: "{{ users.ssh_keys }}"
   ignore_errors: true
