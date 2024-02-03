@@ -3,6 +3,7 @@
 
 #  vars_files:
 #  - path/to/your/variables/file.yml
+   - vars/sudo_commands.yml
 
 - name: Create users
   user:
