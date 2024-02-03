@@ -23,7 +23,6 @@
       - iptraf
       - mtr
       - hdparm
-      - vim-enchanced
       - screen
       - traceroute
       - nmap
@@ -45,3 +44,4 @@
       - chrony
       - vnstat
     state: latest
+    ignore_failures: true
