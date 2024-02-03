@@ -24,14 +24,21 @@
     key: "{{ users.ssh_keys }}"
   ignore_errors: true
 
+    #- name: allow members of the wheel group to sudo certain commands without entering a password
+    #  ansible.builtin.lineinfile:
+    #    dest: /etc/sudoers.d/99-cnic-commands-no-pass
+    #    state: present
+    #    line: "{{ item }}"
+    #    create: true
+    #  with_items: "{{ cmds }}"
+    #  loop: 
+    #    - "%wheel ALL=(ALL) NOPASSWD: /usr/bin/iftop"
+    #    - "%wheel ALL=(ALL) NOPASSWD: /usr/bin/htop"
+    #
 - name: allow members of the wheel group to sudo certain commands without entering a password
   ansible.builtin.lineinfile:
     dest: /etc/sudoers.d/99-cnic-commands-no-pass
     state: present
     line: "{{ item }}"
     create: true
-  with_items: "{{ cmds }}"
-  loop: 
-    - "%wheel ALL=(ALL) NOPASSWD: iftop"
-    - "%wheel ALL=(ALL) NOPASSWD: htop"
-
+  with_items: "{{ sudo_cmds }}"
