@@ -1,7 +1,5 @@
 ---
 # tasks file for users
-vars_files:
-  - /vars/sudo_commands.yml
 
 - name: Create users
   user:

@@ -43,3 +43,7 @@ users:
     ssh_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINqhMM+3jAMFUCvR1vU/VuKuaaIF2TQ5M7TQ8asbPUQm HalcyonKey
       - ssh-ed25519 AAAAB3NzaC1lZDI1NTE5AAAAINqhMM+3jAMFUCvR1vU/VuKuaaIF2TQ5M7TQ8asbPUQm HalcyonKey2
+
+cmds:
+  - "%wheel ALL=(ALL) NOPASSWD: iftop"
+  - "%wheel ALL=(ALL) NOPASSWD: tcpdump"
