@@ -13,6 +13,9 @@ users:
     home: /home/kareem
     groups:
       - wheel
+    ssh_keys:
+      - ssh-ed25519 AAAAC3Nzax1lZDI1NTE5AAAAINqhMM+3jAMFUCvR1vU/VuKuaaIF2TQ5M7TQ8asbPUQm HalcyonKey
+      - ssh-ed25519 AAAAB3Nzaj1lZDI1NTE5AAAAINqhMM+3jAMFUCvR1vU/VuKuaaIF2TQ5M7TQ8asbPUQm HalcyonKey2
 
   - username: lars
     password_hash: sdfwdf
@@ -24,6 +27,9 @@ users:
     home: /home/lars
     groups:
       - wheel
+    ssh_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAlINqhMM+3jAMFUCvR1vU/VuKuaaIF2TQ5M7TQ8asbPUQm HalcyonKey
+      - ssh-ed25519 AAAAB3NzaC1lZDI1NTE5AAAAINquMM+3jAMFUCvR1vU/VuKuaaIF2TQ5M7TQ8asbPUQm HalcyonKey2
 
   - username: jhewlett
     password_hash: $6$KQfBg3XEWaf24YHS$MIfRuf8LlEi9sa4V1Kif5EXIOMe28OjZXNJp4p6JGa.RMaWJTunJnbK3AzRDIgPXWw/RxJCIu9yofTfg0CocR0
