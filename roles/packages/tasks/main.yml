@@ -11,6 +11,7 @@
 - name: Install essential packages
   ansible.builtin.dnf:
     name:
+      - mkpasswd
       - vim
       - mtr
       - git
