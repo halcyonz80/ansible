@@ -13,4 +13,4 @@
         vm_list:
   tasks:
     - name: include some post config steps
-      include_tasks: post-configproxmox.yml
+      include_tasks: post-config.yml
