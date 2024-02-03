@@ -10,7 +10,7 @@
     createhome: "{{ item.createhome }}"
     home: "{{ item.home }}"
     groups: "{{ item.groups }}"
-    state: "{{ item.state | default(present)}}"§
+    state: "{{ item.state | default(present) }}"
   with_items: "{{ users }}"
 
 - name: show vars
