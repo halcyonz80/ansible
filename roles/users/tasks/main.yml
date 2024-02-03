@@ -33,4 +33,5 @@
     state: present
     line: "{{ item }}"
     create: true
+    validate: /usr/sbin/visudo -cf %s
   with_items: "{{ sudo_cmds }}"

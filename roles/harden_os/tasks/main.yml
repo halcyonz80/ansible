@@ -16,12 +16,30 @@
     - cockpit
     - dhcpv6-client
 
-- name: Enable required services
-  ansible.posix.firewalld:
-    service: "ssh"
+- name: Add SSH port to public zone
+  firewalld:
+    zone: dmz
+    service: ssh
+    state: enabled
+    immediate: yes
+    permanent: yes
+
+- name: Allow SSH from specific IP addresses
+  firewalld:
+    zone: dmz
+    source: "{{ item }}"
+    immediate: yes
     state: enabled
     permanent: yes
-    immediate: yes
+  with_items:
+    - 90.155.89.191/32
+    - 217.138.20.164/32
+    - 212.18.250.0/24
+
+      #- name: Drop other incoming SSH traffic
+      #  firewalld:
+      #  service: ssh
+      #  state: disabled
 
 - name: Ensure firewall service is up and running
   ansible.builtin.service:
