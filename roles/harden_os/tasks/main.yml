@@ -94,7 +94,7 @@
 
 - name: Add a basic audit config
   ansible.builtin.copy:
-    src: audit.rules
+    src: cnic-audit.rules
     dest: /etc/audit/rules.d/cnic-audit.rules
     owner: root
     group: root

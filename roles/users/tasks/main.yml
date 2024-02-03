@@ -1,2 +1,19 @@
 ---
 # tasks file for users
+- name: Create Users
+
+#  vars_files:
+#  - path/to/your/variables/file.yml
+
+- name: Create users
+  user:
+    name: "{{ item.username }}"
+    password: "{{ item.password_hash }}"  # You should replace this with the hashed password for each user
+    shell: "{{ item.shell }}"
+    system: "{{ item.system }}"
+    createhome: "{{ item.createhome }}"
+    home: "{{ item.home }}"
+    groups: "{{ item.groups }}"
+    state: present
+  with_items: "{{ users }}"
+

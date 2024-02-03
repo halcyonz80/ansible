@@ -1,2 +1,38 @@
 ---
 # vars file for users
+# to generate password:
+# mkpasswd --method=sha-512
+# grub-crypt
+users:
+  - username: kareem
+    password_hash: sdfwdf
+    use_sudo: true
+    shell: /bin/bash
+    system: false
+    createhome: true
+    home: /home/kareem
+    groups:
+      - sudo
+      - wheel
+
+  - username: lars
+    password_hash: sdfwdf
+    use_sudo: true
+    shell: /bin/bash
+    system: false
+    createhome: true
+    home: /home/lars
+    groups:
+      - sudo
+      - wheel
+
+  - username: jhewlett
+    password_hash: sdfwdf
+    use_sudo: true
+    shell: /bin/bash
+    system: false
+    createhome: true
+    home: /home/jhewlett
+    groups:
+      - sudo
+      - wheel
