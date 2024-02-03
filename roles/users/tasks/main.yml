@@ -21,8 +21,8 @@
 
 - name: Set up ssh keys
   ansible.posix.authorized_key:
-    user: "{{ item.username | dict2items }}" 
-    key: "{{ lookup('file', 'files/'+ item + '.key.pub') }}"
+    user: "{{ item.username }}" 
+    key: "{{ lookup('file', 'files/'+ item.username + '.key.pub') }}"
     state: present
     exclusive: true
   with_items: "{{ users }}"
