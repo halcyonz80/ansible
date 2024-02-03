@@ -1,6 +1,5 @@
 ---
 # tasks file for users
-- name: Create Users
 
 #  vars_files:
 #  - path/to/your/variables/file.yml
