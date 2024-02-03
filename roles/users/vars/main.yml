@@ -19,7 +19,6 @@ users:
       - ssh-ed25519 AAAAB3Nzaj1lZDI1NTE5AAAAINqhMM+3jAMFUCvR1vU/VuKuaaIF2TQ5M7TQ8asbPUQm HalcyonKey2
 
   - username: lars
-    password_hash: sdfwdf
     password_hash: $6$KQfBg3XEWkf24YHS$MIfRuf8LlEi9sa4V1Kif5EXIOMe28OjZXNJp4p6JGa.RMaWJTunJnbK3AzRDIgPXWw/RxJCIu9yofTfg0CocR0
     use_sudo: true
     shell: /bin/bash

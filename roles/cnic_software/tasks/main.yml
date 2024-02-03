@@ -1,8 +1,14 @@
 ---
 # tasks file for cnic_software
 
-- name: Install Main CNIC packages
+- name: Install Specific CNIC packages
   ansible.builtin.package:
     name: "{{ item.name }}" 
     state: present
   with_items: "{{ packages }}"
+
+- name: Install Global CNIC packages
+  ansible.builtin.package:
+    name: "{{ item.name }}" 
+    state: present
+  with_items: "{{ global_packages }}"

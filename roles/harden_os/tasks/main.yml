@@ -38,8 +38,33 @@
 - name: Verify if reboot needed
   ansible.builtin.debug:
     msg: "Reboot needed: {{ selinux_status.reboot_required }}"
-  changed_when: "{{ selinux_status.reboot_required | bool }}"
+  changed_when:  selinux_status.reboot_required | bool 
   #notify: reboot_host
+
+  ## This parameters are pulled from the vars/ directory
+- name: Knot tuning
+  ansible.posix.sysctl:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    state: present
+    sysctl_set: yes
+    reload: yes
+    sysctl_file: /etc/sysctl.d/99-cnic-knot.conf
+  loop: "{{ knot_sysctl_parameters }}"
+  when: "'knot_servers' in group_names"
+  ignore_errors: true
+  
+    ## This parameters are pulled from the vars/ directory
+- name: Bind tuning
+  ansible.posix.sysctl:
+    name: "{{ item.name }}"
+    value: "{{ item.value }}"
+    state: present
+    sysctl_set: yes
+    reload: yes
+    sysctl_file: /etc/sysctl.d/99-cnic-bind.conf
+  loop: "{{ bind_sysctl_parameters }}"
+  ignore_errors: true
 
 - name: Harden kernel parameters
   ansible.posix.sysctl:
@@ -49,37 +74,8 @@
     state: present
     reload: yes
     sysctl_file: /etc/sysctl.d/99-cnic-kernel.conf
-  loop:
-  - name: kernel.randomize_va_space
-    value: 2
-  - name: kernel.dmesg_restrict
-    value: 1
-  - name: kernel.perf_event_paranoid
-    value: 2
-
-- name: Harden network parameters
-  ansible.posix.sysctl:
-    name: "{{ item.name }}"
-    value: '{{ item.value }}'
-    sysctl_set: yes
-    state: present
-    reload: yes
-    sysctl_file: /etc/sysctl.d/99-cnic-net.conf
-  loop:
-   - name: net.ipv4.tcp_syncookies
-     value: 1
-   - name: net.ipv4.conf.default.log_martians
-     value: 1
-   - name: net.ipv4.conf.all.log_martians
-     value: 1
-   - name: net.ipv4.conf.all.accept_source_route
-     value: 0
-   - name: net.ipv4.conf.default.accept_source_route
-     value: 0
-   - name: net.ipv6.conf.all.accept_source_route
-     value: 0
-   - name: net.ipv6.conf.default.accept_source_route
-     value: 0
+  loop: "{{ kernel_sysctl_settings }}"
+  ignore_errors: true
 
 - name: Ensure audit package is installed
   ansible.builtin.dnf:

@@ -13,3 +13,5 @@
 
 ## Make rules configuration immutable (requires reboot to change)
 -e 2
+
+-a exit,always -F arch=b64 -S execve -k all_commands
