@@ -1,2 +1,9 @@
 ---
 # tasks file for harden_all
+# remove build prompt
+# remove hydrogen7 key
+#
+- name: Remove the 'cool' emoji prompt
+  ansible.builtin.file:
+    path: /etc/profile.d/99-ansible-profile.sh
+    state: absent

@@ -34,3 +34,6 @@ users:
     home: /home/jhewlett
     groups:
       - wheel
+    ssh_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINqhMM+3jAMFUCvR1vU/VuKuaaIF2TQ5M7TQ8asbPUQm HalcyonKey
+      - ssh-ed25519 AAAAB3NzaC1lZDI1NTE5AAAAINqhMM+3jAMFUCvR1vU/VuKuaaIF2TQ5M7TQ8asbPUQm HalcyonKey2
