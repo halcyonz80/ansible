@@ -1,7 +1,6 @@
 ---
 # tasks file for packages
 # #packages.yaml
----
 - name: Get hostname and IP address of new hosts
   hosts: all
   gather_facts: yes
