@@ -26,3 +26,10 @@
   vars:  
     key: "{{ users.ssh_keys }}"
   ignore_errors: true
+
+- name: allow members of the wheel group to sudo certain commands without entering a password
+  ansible.builtin.lineinfile:
+    dest: /etc/sudoers.d/99-cnic-commands-no-pass
+    state: present
+    line: "{{ item.cmd }}"
+   with_items: "{{ cmds }}"
